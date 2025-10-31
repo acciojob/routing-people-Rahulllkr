@@ -15,15 +15,13 @@ const UserList = () => {
   return (
     <div>
       <h1>User List</h1>
-      {names.map((uName, index) => {
-        return (
-          <div key={index}>
-            <Link to={`/users/${index + 1}`}>
-              <p>{uName}</p>
-            </Link>
-          </div>
-        );
-      })}
+      <ul>
+        {names.map((uName, index) => (
+          <li key={index}>
+            <Link to={`/users/${index + 1}`}>{uName}</Link>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 };
