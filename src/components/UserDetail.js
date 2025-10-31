@@ -61,10 +61,14 @@ const UserDetail = () => {
 
   useEffect(() => {
     setLoader(true);
-    const userIndex = Number(num) - 1;
-    const foundUser = usersName[userIndex];
-    setUserDetail(foundUser);
-    setLoader(false);
+    const interval = setTimeout(() => {
+          const userIndex = Number(num) - 1;
+          const foundUser = usersName[userIndex];
+          setUserDetail(foundUser);
+          setLoader(false);
+    },1000)
+    
+    return () => clearTimeout(interval);
   }, [num]);
 
   if(loader)return <div><h1>Loading...</h1></div>
