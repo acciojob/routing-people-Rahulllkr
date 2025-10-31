@@ -2,7 +2,7 @@
 import React from "react";
 import './../styles/App.css';
 import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
-import users from "./users";
+import UsersList from "./UsersList";
 
 
 
@@ -29,7 +29,7 @@ const names = [
           })
         }
         <Routes>
-          <Route path="/users/:num" element={<Users />}/>
+          <Route path="/users/:num" element={<UsersList />}/>
         </Routes>
         </div>
 

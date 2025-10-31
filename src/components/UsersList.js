@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import { useParams } from 'react-router-dom';
 
 const usersName = [
   {
@@ -52,13 +53,29 @@ const usersName = [
   }
 ];
 
-const Users = () => {
+const UsersList = () => {
+  const num = useParams() 
+  useEffect(() => {
+    usersName.filter((item,index) => {
+      if(index === num-1){
+        return item;
+      }
+    })
+  },[num])
   return (
     <div>
         <h1>User Details</h1>
-        
+        <ul>
+        {
+          usersName.map((item,index) => {
+            return(
+              <li key={index}>{item}</li>
+            )
+          })
+        }
+        </ul>
     </div>
   )
 }
 
-export default Users;
+export default UsersList;
