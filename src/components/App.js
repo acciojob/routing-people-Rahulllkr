@@ -6,6 +6,7 @@ const App = () => {
   return (
     <div>
         {/* Do not remove the main div */}
+        <h1>Hello Routes</h1>
     </div>
   )
 }
