@@ -67,28 +67,17 @@ const UserDetail = () => {
     setLoader(false);
   }, [num]);
 
-  if(loader)return <h1>Loading...</h1>
+  if(loader)return <div><h1>Loading...</h1></div>
 
   if(!userDetail) return <h1>User not found</h1>
   
   return (
     <div>
-      <h1>User Details</h1>
-      <div style={{ display: "flex" }}>
-        <h3>Name</h3>:<p>{userDetail.name}</p>
-      </div>
-      <div style={{ display: "flex" }}>
-        <h3>Username</h3>:<p>{userDetail.username}</p>
-      </div>
-      <div style={{ display: "flex" }}>
-        <h3>Email</h3>:<p>{userDetail.email}</p>
-      </div>
-      <div style={{ display: "flex" }}>
-        <h3>Phone</h3>:<p>{userDetail.phone}</p>
-      </div>
-      <div style={{ display: "flex" }}>
-        <h3>Website</h3>:<p>{userDetail.website}</p>
-      </div>
+<p>Name: {userDetail.name}</p>
+<p>Username: {userDetail.username}</p>
+<p>Email: {userDetail.email}</p>
+<p>Phone: {userDetail.phone}</p>
+<p>Website: {userDetail.website}</p>
     </div>
   );
 };
