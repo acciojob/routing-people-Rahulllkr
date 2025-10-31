@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
 
 const usersName = [
@@ -54,22 +54,30 @@ const usersName = [
 ];
 
 const UsersList = () => {
-  const num = useParams() 
+  const [filterUser,setFilterUser] = useState([])
+  const {num} = useParams() 
   useEffect(() => {
-    usersName.filter((item,index) => {
+    const arr = usersName.filter((item,index) => {
       if(index === num-1){
         return item;
       }
     })
+    setFilterUser(arr);
   },[num])
   return (
     <div>
         <h1>User Details</h1>
         <ul>
         {
-          usersName.map((item,index) => {
+          filterUser.map((item,index) => {
             return(
-              <li key={index}>{item}</li>
+              <div key={index}>
+              <li>{item.name}</li>
+              <li>{item.username}</li>
+              <li>{item.email}</li>
+              <li>{item.phone}</li>
+              <li>{item.website}</li>
+              </div>
             )
           })
         }

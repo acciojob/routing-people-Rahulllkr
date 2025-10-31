@@ -25,7 +25,7 @@ const names = [
         <div>
           {
           names.map((uName,index) => {
-            return <div key={index}><Link to={`/users/:${index+1}`}><p>{uName}</p></Link></div>
+            return <div key={index}><Link to={`/users/${index+1}`}><p>{uName}</p></Link></div>
           })
         }
         <Routes>
